@@ -1,0 +1,55 @@
+body{
+    font-family: 'Courier New', Courier, monospace;
+background-color: #470FF4
+}
+
+.form-group {
+    padding: 5px;
+    text-align: center;
+    padding-top: 10px;
+    color: white;
+}
+
+.nombre{
+    margin-left: -3px;
+}
+
+#color {
+    margin-left: -136px;
+}
+
+.botones{
+    text-align: center;
+    padding-top: 20px;
+}
+
+.button {
+    background-color: #4056F4; 
+    border: none;
+    color: white;
+    padding: 7.5px 15px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+.row{
+    margin-top: 40px;
+    background-color: #470FF4;
+    width: 400px; 
+    height: 200px; 
+    margin-left: 40%;
+}
+
+.form-select{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.info{
+    color: #470FF4;
+    font-weight: bold;
+    text-align: center;
+}

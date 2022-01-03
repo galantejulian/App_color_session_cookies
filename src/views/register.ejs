@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body <% if (locals && locals.color) {%>
+    style="background-color: <%= color %>;"
+<% } %>>
+
+    <% if (locals && locals.name) { %>
+        <p class='info'>tu nombre es: <%= name%> y tu email: <%= email%> y el color elegido es: <%= color %> </p>
+    <% } %>
+
+    <form method="POST" action="/">
+        <div class="row">
+            <div class="nombre">
+                <div class="form-group">
+                    <label><b>Nombre completo:</b></label>
+                    <input 
+                        type="text" 
+                        name="fullName" 
+                        class="form-control <%= locals.errors && errors.fullName ? 'is-invalid' : null %>"
+                        value="<%= locals.oldData ? oldData.fullName : null %>"
+                    >
+                    <% if (locals.errors && errors.fullName) { %>
+                        <div class="text-danger">
+                            <%= errors.fullName.msg %> 
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+
+            
+                <div id='color' class="form-group">
+                    <label><b>Color:</b></label>
+                    <select class="select"
+                        name="color" 
+                        class="form-select <%= locals.errors && errors.color ? 'is-invalid' : null %>"
+                    >
+                        <option value="">Elegí un color</option>
+                        <%  
+                            let colores = ['blue', 'red', 'green', 'yellow'];
+                        %>
+                        <% for (const color of colores) { %>
+                            <option 
+                                value="<%= color %>"
+                                <%= locals.oldData && (color == oldData.color) ? 'selected' : null %> 
+                            > <%= color %> </option>
+                        <% } %>
+                    </select>
+                    <% if (locals.errors && errors.color) { %>
+                        <div class="text-danger">
+                            <%= errors.color.msg %>
+                        </div>
+                    <% } %>
+                </div>
+           
+
+            
+                <div class="form-group">
+                    <label><b>Correo electrónico:</b></label>
+                    <input 
+                        type="text" 
+                        name="email" 
+                        class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                        value="<%= locals.oldData ? oldData.email : null %>"
+                    >
+                    <% if (locals.errors && errors.email) { %>
+                        <div class="text-danger">
+                            <%= errors.email.msg %>
+                        </div>
+                    <% } %>
+                </div>
+        
+            <div class = 'botones'>
+                <div class="button">
+                    <input name="recordarme" type="checkbox"><label>Recordarme</label>
+                </div>
+                <button class="button" type="submit" class="btn btn-primary">Registrarse</button>
+          
+        </form>
+    </div>
+        <form action="/clear" method="POST">
+            <div class='botones'>
+                <button id="borrarColor" class="button" href='/register'>Borrar color</button>
+            </div>
+        </form>
+    </div>
+    </div>
+    </div>
+
+</body>
+</html>
