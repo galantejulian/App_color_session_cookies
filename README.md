@@ -1,10 +1,11 @@
 # App_color_session_cookies
 
-App sencilla para poner en práctica los conceptos de session y cookies.
-Se ingresan algunos datos que se podrán visualizar luego, y se selecciona el color al que se quiere cambiar el fondo.
+Simple app to implement the concepts of session and cookies. Enter some data that can be viewed later, and select the color to which you want to change the background.
 
 ![Screenshot](captura-pantalla.png)
 
 
-se utilizó html, css y javascript.
+tech: html, css y javascript.
 node, express y ejs.
+
+  🙌
